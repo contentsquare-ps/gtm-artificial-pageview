@@ -1,0 +1,5 @@
+homepage: "https://contentsquare.com/"
+documentation: "https://docs.contentsquare.com/uxa-en/"
+versions:
+  - sha: a03b492b6733e188e1db716e172cae8e4fb9eadc
+    changeNotes: First Version
