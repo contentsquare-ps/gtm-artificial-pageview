@@ -1,5 +1,7 @@
 homepage: "https://contentsquare.com/"
 documentation: "https://docs.contentsquare.com/uxa-en/"
 versions:
+ - sha: 5be35626f87f1292856f39fc401705b3e89982c0
+    changeNotes: Fixed bug with URL
   - sha: 15488652504db9d760d0f90558fda36d1027e8bf
     changeNotes: First Version
