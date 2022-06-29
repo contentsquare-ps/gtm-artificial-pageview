@@ -64,15 +64,12 @@ ___TEMPLATE_PARAMETERS___
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
-//const logToConsole = require("logToConsole");
 const getUrl = require("getUrl");
-const parseUrl = require('parseUrl');
 const createQueue = require("createQueue");
 
 let _uxaPush = createQueue("_uxa");
-const urlObject = parseUrl(getUrl);
-const pathname = urlObject.pathname;
-const hash = urlObject.hash;
+const pathname = getUrl('path');
+const hash = getUrl('fragment');
 const options = data.options;
 const apv_value = data.artificial_pageview_value;
 let popup = "";
