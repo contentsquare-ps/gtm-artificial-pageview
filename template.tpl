@@ -70,7 +70,7 @@ const parseUrl = require('parseUrl');
 const createQueue = require("createQueue");
 
 let _uxaPush = createQueue("_uxa");
-const urlObject = parseUrl(getUrl);
+const urlObject = parseUrl(getUrl());
 const pathname = urlObject.pathname;
 const hash = urlObject.hash;
 const options = data.options;
