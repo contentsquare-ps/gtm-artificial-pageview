@@ -1,6 +1,8 @@
 homepage: "https://contentsquare.com/"
 documentation: "https://docs.contentsquare.com/uxa-en/"
 versions:
+    - sha: 08cd08a8a8a20efbc16c63594d4a2672e0efdd5f
+      changeNotes: Added close popup logic
     - sha: 9cabe1f4ab905d18346465036fac8df69ed25903
       changeNotes: Fixed bug with getURL
     - sha: 5be35626f87f1292856f39fc401705b3e89982c0
