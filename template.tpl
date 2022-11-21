@@ -37,9 +37,9 @@ ___TEMPLATE_PARAMETERS___
   {
     "type": "TEXT",
     "name": "artificial_pageview_value",
-    "displayName": "Artificial Pageview value",
+    "displayName": "Artificial Pageview Value",
     "simpleValueType": true,
-    "help": "Add the text you want to send in the query string. The text must be a maximum of 255 characters. Do not add “#”, since all that comes after will be erased. Please note that the domain will be automatically added before, and the query after."
+    "help": "Add the text you want to send in the query string. The text must be a maximum of 255 characters. Do not add “#”, since all that comes after will be erased. Please note that the domain will be automatically added before, and the query after.\n\nLeave blank if you choose the closing popup option."
   },
   {
     "type": "SELECT",
@@ -53,11 +53,15 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "value": "popup",
-        "displayValue": "This is for the opening of a popup."
+        "displayValue": "Use for the opening of a popup"
+      },
+      {
+        "value": "close-popup",
+        "displayValue": "Use for the closing of a popup"
       }
     ],
     "simpleValueType": true,
-    "help": "Pick an option for the format of the artificial pageview. Default is free text. If you choose the option for the opening of a popup then the value will be prefixed with cs-popin- in the query string."
+    "help": "Pick an option for the format of the artificial pageview. Default is free text. \n\nIf you choose the option for the opening of a popup then the value will be prefixed with cs-popin- in the query string. \n\nIf you choose the option for the closing of a popup then the value will be empty and a default artificial pageview will be sent with no special text in the query string. Do not insert a value in the open field."
   }
 ]
 
@@ -67,21 +71,34 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 //const logToConsole = require("logToConsole");
 const getUrl = require("getUrl");
 const parseUrl = require('parseUrl');
+const urlObject = parseUrl(getUrl());
 const createQueue = require("createQueue");
 
 let _uxaPush = createQueue("_uxa");
-const urlObject = parseUrl(getUrl());
 const pathname = urlObject.pathname;
+const search = urlObject.search;
 const hash = urlObject.hash;
 const options = data.options;
-const apv_value = data.artificial_pageview_value;
-let popup = "";
+let apv_value = data.artificial_pageview_value;
+let popup_state = "";
 
 if (options === "popup") {
-    popup = "cs-popin-";
+    popup_state = "cs-popin-";
+}
+else if (options === "close-popup") {
+    apv_value = "";
 }
 
-_uxaPush(["trackPageview", pathname + hash.replace("#", "?__") + "?" + popup + apv_value]);
+if (options != "close-popup"){
+    _uxaPush(['setQuery', search + (search ? '&' : '?') + popup_state + apv_value]);
+    _uxaPush(["trackPageview", pathname + hash.replace("#", "?__")]);
+    _uxaPush(['setQuery', search]);
+}
+else {
+    _uxaPush(['setQuery', search]);
+    _uxaPush(["trackPageview", pathname + hash.replace("#", "?__")]);
+}
+
 data.gtmOnSuccess();
 
 
@@ -188,3 +205,5 @@ scenarios: []
 ___NOTES___
 
 Developed by Uri Gobey @ Contentsquare
+
+
