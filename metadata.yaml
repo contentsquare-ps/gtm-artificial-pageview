@@ -1,6 +1,8 @@
 homepage: "https://contentsquare.com/"
 documentation: "https://docs.contentsquare.com/uxa-en/"
 versions:
+    - sha: 35320870971b6f103857acda27dac3a56675e441
+      changeNotes: Updated company logo
     - sha: be77a4fa920618e78316b59064fc6b6f069bb5a4
       changeNotes: Added close popup logic
     - sha: 9cabe1f4ab905d18346465036fac8df69ed25903
