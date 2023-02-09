@@ -1,7 +1,7 @@
 homepage: "https://contentsquare.com/"
 documentation: "https://docs.contentsquare.com/uxa-en/"
 versions:
-    - sha: b4a9e073acb8d269b2270902e3e9d8d6b733561f
+    - sha: b3cf2171564090583718579ad4c5852ea54fac1b
       changeNotes: Fixed bug when APV value is empty and version number issue
     - sha: 456ff980ee9fd9a6dfbcec39ba511fa518baf336
       changeNotes: Fixed bug when APV value is empty
