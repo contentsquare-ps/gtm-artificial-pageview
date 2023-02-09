@@ -68,7 +68,7 @@ ___TEMPLATE_PARAMETERS___
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
-//
+//const logTo = require("logToConsole");
 //const logToConsole = require("logToConsole");
 const getUrl = require("getUrl");
 const parseUrl = require("parseUrl");
