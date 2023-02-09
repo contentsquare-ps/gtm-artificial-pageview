@@ -68,8 +68,8 @@ ___TEMPLATE_PARAMETERS___
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
-const logTo = require("logToConsole");
 //const logToConsole = require("logToConsole");
+//const test = require("");
 const getUrl = require("getUrl");
 const parseUrl = require("parseUrl");
 const urlObject = parseUrl(getUrl());
@@ -80,6 +80,7 @@ const pathname = urlObject.pathname;
 const search = urlObject.search;
 const hash = urlObject.hash;
 const options = data.options;
+
 let apv_value = data.artificial_pageview_value;
 if (!apv_value) {
     apv_value = "";
@@ -211,4 +212,5 @@ scenarios: []
 ___NOTES___
 
 Developed by Uri Gobey @ Contentsquare
+
 
