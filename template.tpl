@@ -69,7 +69,6 @@ ___TEMPLATE_PARAMETERS___
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 //const logToConsole = require("logToConsole");
-//const test = require("");
 const getUrl = require("getUrl");
 const parseUrl = require("parseUrl");
 const urlObject = parseUrl(getUrl());
@@ -81,9 +80,9 @@ const search = urlObject.search;
 const hash = urlObject.hash;
 const options = data.options;
 
-let apv_value = data.artificial_pageview_value;
-if (!apv_value) {
-    apv_value = "";
+let apv_val = data.artificial_pageview_value;
+if (!apv_val) {
+    apv_val = "";
 }
 
 let popup_state = "";
@@ -91,12 +90,12 @@ let popup_state = "";
 if (options === "popup") {
     popup_state = "cs-popin-";
 } else if (options === "close-popup") {
-    apv_value = "";
+    apv_val = "";
 }
 
 if (options != "close-popup") {
-    if (apv_value || popup_state) {
-        _uxaPush(["setQuery", search + (search ? "&" : "?") + popup_state + apv_value]);
+    if (apv_val || popup_state) {
+        _uxaPush(["setQuery", search + (search ? "&" : "?") + popup_state + apv_val]);
     }
 
     _uxaPush(["trackPageview", pathname + hash.replace("#", "?__")]);
@@ -212,3 +211,5 @@ scenarios: []
 ___NOTES___
 
 Developed by Uri Gobey @ Contentsquare
+
+
