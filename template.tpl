@@ -68,13 +68,13 @@ ___TEMPLATE_PARAMETERS___
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
-//const logToConsole = require("logToConsole");
-const getUrl = require("getUrl");
-const parseUrl = require("parseUrl");
+//const logToConsole = require('logToConsole');
+const getUrl = require('getUrl');
+const parseUrl = require('parseUrl');
 const urlObject = parseUrl(getUrl());
-const createQueue = require("createQueue");
+const createQueue = require('createQueue');
 
-let _uxaPush = createQueue("_uxa");
+let _uxaPush = createQueue('_uxa');
 const pathname = urlObject.pathname;
 const search = urlObject.search;
 const hash = urlObject.hash;
