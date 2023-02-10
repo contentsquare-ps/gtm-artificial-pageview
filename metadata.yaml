@@ -1,0 +1,17 @@
+homepage: "https://contentsquare.com/"
+documentation: "https://docs.contentsquare.com/uxa-en/"
+versions:
+    - sha: 873ec4240357a1ac66fd46b6f8a8d63978ea669e
+      changeNotes: Fixed version number
+    - sha: 456ff980ee9fd9a6dfbcec39ba511fa518baf336
+      changeNotes: Fixed bug when APV value is empty
+    - sha: 35320870971b6f103857acda27dac3a56675e441
+      changeNotes: Updated company logo
+    - sha: be77a4fa920618e78316b59064fc6b6f069bb5a4
+      changeNotes: Added close popup logic
+    - sha: 9cabe1f4ab905d18346465036fac8df69ed25903
+      changeNotes: Fixed bug with getURL
+    - sha: 5be35626f87f1292856f39fc401705b3e89982c0
+      changeNotes: Fixed bug with URL
+    - sha: 15488652504db9d760d0f90558fda36d1027e8bf
+      changeNotes: First Version
