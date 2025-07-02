@@ -1,6 +1,8 @@
 homepage: "https://contentsquare.com/"
-documentation: "https://docs.contentsquare.com/uxa-en/"
+documentation: "https://docs.contentsquare.com/en/web/#google-tag-manager-template"
 versions:
+    - sha: 8abe3be39f39e1455b80c05493b0d2c79ac4c391
+      changeNotes: Updated Artificial Pageview Logic
     - sha: 21b4df346969559f169eeb94e3453edf60e9d96f
       changeNotes: Fixed version number
     - sha: 456ff980ee9fd9a6dfbcec39ba511fa518baf336
